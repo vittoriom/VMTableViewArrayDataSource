@@ -7,58 +7,77 @@
 //
 
 #import "VMMasterViewController.h"
+#import "UITableViewController+VMStaticCells.h"
+#import "VMArrayTableAdapter.h"
 
 @interface VMMasterViewController () {
-    NSMutableArray *_objects;
+    NSArray *_firstSectionObjects;
+    NSArray *_secondSectionObjects;
 }
 @end
 
 @implementation VMMasterViewController
 
-- (void)awakeFromNib
+- (void)viewDidLoad
 {
+    [super viewDidLoad];
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         self.clearsSelectionOnViewWillAppear = NO;
         self.preferredContentSize = CGSizeMake(320.0, 600.0);
     }
-    [super awakeFromNib];
+    
+    _firstSectionObjects = @[@"Test",@"Test2"];
+    
+    UITableViewCell *staticCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"No"];
+    staticCell.textLabel.text = @"Third row";
+    staticCell.detailTextLabel.text = @"In first section";
+    
+    UITableViewCell *staticCell2 = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"No2"];
+    staticCell2.textLabel.text = @"Third row";
+    staticCell2.detailTextLabel.text = @"In second section";
+    
+    UITableViewCell *staticCell3 = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"No3"];
+    staticCell3.textLabel.text = @"Fourth row";
+    staticCell3.detailTextLabel.text = @"In second section";
+    
+    _secondSectionObjects = @[@"Test3", @"Test4"];
+    
+    self.tableView.rows[@"0,2"] = staticCell;
+    self.tableView.rows[@"1,2"] = staticCell2;
+    self.tableView.rows[@"1,3"] = staticCell3;
+    self.tableView.chainedDelegate = self;
+    self.tableView.dataSource = self.tableView;
+    
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table View
 
+- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 60.0f;
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _objects.count;
+    if(section == 0)
+        return _firstSectionObjects.count + 1;
+    else
+        return _secondSectionObjects.count + 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
 
-    NSDate *object = _objects[indexPath.row];
+    NSDate *object = indexPath.section == 0 ? _firstSectionObjects[indexPath.row] : _secondSectionObjects[indexPath.row];
     cell.textLabel.text = [object description];
     return cell;
-}
-
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [_objects removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }
 }
 
 @end

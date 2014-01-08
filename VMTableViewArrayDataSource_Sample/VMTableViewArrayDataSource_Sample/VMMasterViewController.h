@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@class VMDetailViewController;
-
 @interface VMMasterViewController : UITableViewController
-
-@property (strong, nonatomic) VMDetailViewController *detailViewController;
 
 @end
