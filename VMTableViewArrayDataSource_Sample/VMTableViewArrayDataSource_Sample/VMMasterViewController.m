@@ -8,7 +8,8 @@
 
 #import "VMMasterViewController.h"
 #import "UITableViewController+VMStaticCells.h"
-#import "VMArrayTableAdapter.h"
+#import "VMStaticCellsAdapter.h"
+#import "VMStaticSectionsAdapter.h"
 
 @interface VMMasterViewController () {
     NSArray *_firstSectionObjects;
@@ -42,9 +43,9 @@
     
     _secondSectionObjects = @[@"Test3", @"Test4"];
     
-    self.tableView.rows[@"0,2"] = staticCell;
-    self.tableView.rows[@"1,2"] = staticCell2;
-    self.tableView.rows[@"1,3"] = staticCell3;
+    self.tableView.items[0][2] = staticCell;
+    self.tableView.items[1][2] = staticCell2;
+    self.tableView.items[1][3] = staticCell3;
     self.tableView.chainedDelegate = self;
     self.tableView.dataSource = self.tableView;
     
@@ -60,15 +61,15 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if(section == 0)
-        return _firstSectionObjects.count + 1;
+        return _firstSectionObjects.count;
     else
-        return _secondSectionObjects.count + 2;
+        return _secondSectionObjects.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

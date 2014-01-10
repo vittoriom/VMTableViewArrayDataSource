@@ -16,7 +16,8 @@
 		52339703187CAA2B00AB9C8E /* VMMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52339702187CAA2B00AB9C8E /* VMMasterViewController.m */; };
 		52339708187CAA2B00AB9C8E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52339707187CAA2B00AB9C8E /* Images.xcassets */; };
 		52339727187CAB7E00AB9C8E /* UITableViewController+VMStaticCells.m in Sources */ = {isa = PBXBuildFile; fileRef = 52339726187CAB7E00AB9C8E /* UITableViewController+VMStaticCells.m */; };
-		5233972A187CABBF00AB9C8E /* VMArrayTableAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 52339729187CABBF00AB9C8E /* VMArrayTableAdapter.m */; };
+		5233972A187CABBF00AB9C8E /* VMStaticCellsAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 52339729187CABBF00AB9C8E /* VMStaticCellsAdapter.m */; };
+		5283AFCA188097E200D5A23B /* VMStaticSectionsAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5283AFC9188097E200D5A23B /* VMStaticSectionsAdapter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,10 +37,12 @@
 		5233970E187CAA2B00AB9C8E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		52339725187CAB7E00AB9C8E /* UITableViewController+VMStaticCells.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewController+VMStaticCells.h"; sourceTree = "<group>"; };
 		52339726187CAB7E00AB9C8E /* UITableViewController+VMStaticCells.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewController+VMStaticCells.m"; sourceTree = "<group>"; };
-		52339728187CABBF00AB9C8E /* VMArrayTableAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMArrayTableAdapter.h; sourceTree = "<group>"; };
-		52339729187CABBF00AB9C8E /* VMArrayTableAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMArrayTableAdapter.m; sourceTree = "<group>"; };
+		52339728187CABBF00AB9C8E /* VMStaticCellsAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMStaticCellsAdapter.h; sourceTree = "<group>"; };
+		52339729187CABBF00AB9C8E /* VMStaticCellsAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMStaticCellsAdapter.m; sourceTree = "<group>"; };
 		5233972B187CAE1500AB9C8E /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		5233972C187CAE1500AB9C8E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		5283AFC8188097E200D5A23B /* VMStaticSectionsAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMStaticSectionsAdapter.h; sourceTree = "<group>"; };
+		5283AFC9188097E200D5A23B /* VMStaticSectionsAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMStaticSectionsAdapter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +100,10 @@
 				523396F0187CAA2B00AB9C8E /* Supporting Files */,
 				52339725187CAB7E00AB9C8E /* UITableViewController+VMStaticCells.h */,
 				52339726187CAB7E00AB9C8E /* UITableViewController+VMStaticCells.m */,
-				52339728187CABBF00AB9C8E /* VMArrayTableAdapter.h */,
-				52339729187CABBF00AB9C8E /* VMArrayTableAdapter.m */,
+				52339728187CABBF00AB9C8E /* VMStaticCellsAdapter.h */,
+				52339729187CABBF00AB9C8E /* VMStaticCellsAdapter.m */,
+				5283AFC8188097E200D5A23B /* VMStaticSectionsAdapter.h */,
+				5283AFC9188097E200D5A23B /* VMStaticSectionsAdapter.m */,
 			);
 			path = VMTableViewArrayDataSource_Sample;
 			sourceTree = "<group>";
@@ -181,7 +186,8 @@
 			files = (
 				52339703187CAA2B00AB9C8E /* VMMasterViewController.m in Sources */,
 				523396F6187CAA2B00AB9C8E /* main.m in Sources */,
-				5233972A187CABBF00AB9C8E /* VMArrayTableAdapter.m in Sources */,
+				5283AFCA188097E200D5A23B /* VMStaticSectionsAdapter.m in Sources */,
+				5233972A187CABBF00AB9C8E /* VMStaticCellsAdapter.m in Sources */,
 				52339727187CAB7E00AB9C8E /* UITableViewController+VMStaticCells.m in Sources */,
 				523396FA187CAA2B00AB9C8E /* VMAppDelegate.m in Sources */,
 			);
@@ -320,6 +326,7 @@
 				52339720187CAA2B00AB9C8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

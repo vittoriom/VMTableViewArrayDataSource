@@ -8,11 +8,11 @@
 
 @import UIKit;
 
-@class VMArrayTableAdapter;
+@class VMStaticSectionsAdapter;
 
 @interface UITableView (VMStaticCells) <UITableViewDataSource>
 
-- (VMArrayTableAdapter *) rows;
+- (VMStaticSectionsAdapter *) items;
 
 - (BOOL) cellIsStaticAtIndexPath:(NSIndexPath *)indexPath;
 

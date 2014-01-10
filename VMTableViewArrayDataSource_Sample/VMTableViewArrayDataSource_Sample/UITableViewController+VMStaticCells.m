@@ -8,7 +8,8 @@
 
 #import "UITableViewController+VMStaticCells.h"
 #import <objc/runtime.h>
-#import "VMArrayTableAdapter.h"
+#import "VMStaticSectionsAdapter.h"
+#import "VMStaticCellsAdapter.h"
 
 const char *kAdapterKey = "VMStaticCellsAdapter";
 const char *kChainedDelegateKey = "VMChainedDelegate";
@@ -17,12 +18,12 @@ const char *kChainedDelegateKey = "VMChainedDelegate";
 
 @dynamic chainedDelegate;
 
-- (VMArrayTableAdapter *) rows
+- (VMStaticSectionsAdapter *) items
 {
-    VMArrayTableAdapter *adapter = objc_getAssociatedObject(self, kAdapterKey);
+    VMStaticSectionsAdapter *adapter = objc_getAssociatedObject(self, kAdapterKey);
     if(!adapter)
     {
-        adapter = [VMArrayTableAdapter new];
+        adapter = [VMStaticSectionsAdapter new];
         objc_setAssociatedObject(self, kAdapterKey, adapter, OBJC_ASSOCIATION_RETAIN);
     }
     
@@ -31,7 +32,7 @@ const char *kChainedDelegateKey = "VMChainedDelegate";
 
 - (BOOL) cellIsStaticAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [self.rows objectAtIndexPath:indexPath] != nil;
+    return [self.items objectAtIndexPath:indexPath] != nil;
 }
 
 - (id<UITableViewDataSource>) chainedDelegate
@@ -56,20 +57,26 @@ const char *kChainedDelegateKey = "VMChainedDelegate";
 
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [self.chainedDelegate numberOfSectionsInTableView:tableView];
+    NSInteger delegateSections = [self.chainedDelegate numberOfSectionsInTableView:tableView];
+    NSInteger staticSections = [self.items count];
+    
+    return staticSections + delegateSections; //TODO in some way take into account shared sections
 }
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if([self cellIsStaticAtIndexPath:indexPath])
-        return (UITableViewCell *)[self.rows objectAtIndexPath:indexPath];
+        return [self.items objectAtIndexPath:indexPath];
     else
-        return [self.chainedDelegate tableView:tableView cellForRowAtIndexPath:indexPath];
+        return [self.chainedDelegate tableView:tableView cellForRowAtIndexPath:indexPath]; //TODO translate the index path
 }
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.chainedDelegate tableView:tableView numberOfRowsInSection:section];
+    NSInteger delegateRows = [self.chainedDelegate tableView:tableView numberOfRowsInSection:section];
+    NSInteger staticRows = [self.items[section] count];
+    
+    return staticRows + delegateRows;
 }
 
 @end
