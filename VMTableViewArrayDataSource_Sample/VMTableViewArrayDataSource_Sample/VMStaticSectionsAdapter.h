@@ -12,6 +12,8 @@
 
 @interface VMStaticSectionsAdapter : NSObject
 
+- (NSIndexPath *) translateIndexPath:(NSIndexPath *)indexPath;
+
 - (NSInteger) count;
 
 - (VMStaticCellsAdapter *) objectAtIndex:(NSInteger)index;

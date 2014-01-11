@@ -51,6 +51,27 @@
     return [self.privateDataStructure allKeys].count;
 }
 
+- (NSIndexPath *) translateIndexPath:(NSIndexPath *)indexPath
+{
+    NSIndexPath *translated = nil;
+    NSInteger finalRow = indexPath.row;
+    //Iterate from i = 0 to indexPath.row
+    //Search for a row @"i" in privateDataStructure[indexPath.section]
+    //If there is, decrement the final row
+    //Otherwise, continue
+    VMStaticCellsAdapter *rowsForSection = [self objectAtIndex:indexPath.section];
+    for(int i=0; i<indexPath.row; i++)
+    {
+        if([rowsForSection objectAtIndex:i] != nil)
+        {
+            finalRow--;
+        }
+    }
+    
+    translated = [NSIndexPath indexPathForItem:finalRow inSection:indexPath.section];
+    return translated;
+}
+
 - (VMStaticCellsAdapter *) objectAtIndex:(NSInteger)index
 {
     VMStaticCellsAdapter *rows = (VMStaticCellsAdapter *)[self.privateDataStructure objectForKey:[self keyFromIndex:index]];

@@ -10,6 +10,7 @@
 #import <objc/runtime.h>
 #import "VMStaticSectionsAdapter.h"
 #import "VMStaticCellsAdapter.h"
+#import "NSIndexPath+StaticCellsTranslationHelper.h"
 
 const char *kAdapterKey = "VMStaticCellsAdapter";
 const char *kChainedDelegateKey = "VMChainedDelegate";
@@ -68,7 +69,11 @@ const char *kChainedDelegateKey = "VMChainedDelegate";
     if([self cellIsStaticAtIndexPath:indexPath])
         return [self.items objectAtIndexPath:indexPath];
     else
-        return [self.chainedDelegate tableView:tableView cellForRowAtIndexPath:indexPath]; //TODO translate the index path
+    {
+        NSIndexPath *translatedIndexPath = [self.items translateIndexPath:indexPath];
+        [translatedIndexPath setOriginalIndexPath:indexPath];
+        return [self.chainedDelegate tableView:tableView cellForRowAtIndexPath:translatedIndexPath];
+    }
 }
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

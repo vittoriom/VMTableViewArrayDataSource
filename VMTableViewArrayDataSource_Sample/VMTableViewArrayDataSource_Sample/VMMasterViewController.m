@@ -34,7 +34,7 @@
     staticCell.detailTextLabel.text = @"In first section";
     
     UITableViewCell *staticCell2 = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"No2"];
-    staticCell2.textLabel.text = @"Third row";
+    staticCell2.textLabel.text = @"Second row";
     staticCell2.detailTextLabel.text = @"In second section";
     
     UITableViewCell *staticCell3 = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"No3"];
@@ -44,7 +44,7 @@
     _secondSectionObjects = @[@"Test3", @"Test4"];
     
     self.tableView.items[0][2] = staticCell;
-    self.tableView.items[1][2] = staticCell2;
+    self.tableView.items[1][1] = staticCell2;
     self.tableView.items[1][3] = staticCell3;
     self.tableView.chainedDelegate = self;
     self.tableView.dataSource = self.tableView;
