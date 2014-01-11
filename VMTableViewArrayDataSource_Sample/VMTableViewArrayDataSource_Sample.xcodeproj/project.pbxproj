@@ -15,7 +15,7 @@
 		523396FA187CAA2B00AB9C8E /* VMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 523396F9187CAA2B00AB9C8E /* VMAppDelegate.m */; };
 		52339703187CAA2B00AB9C8E /* VMMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52339702187CAA2B00AB9C8E /* VMMasterViewController.m */; };
 		52339708187CAA2B00AB9C8E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52339707187CAA2B00AB9C8E /* Images.xcassets */; };
-		52339727187CAB7E00AB9C8E /* UITableViewController+VMStaticCells.m in Sources */ = {isa = PBXBuildFile; fileRef = 52339726187CAB7E00AB9C8E /* UITableViewController+VMStaticCells.m */; };
+		52339727187CAB7E00AB9C8E /* UITableView+VMStaticCells.m in Sources */ = {isa = PBXBuildFile; fileRef = 52339726187CAB7E00AB9C8E /* UITableView+VMStaticCells.m */; };
 		5233972A187CABBF00AB9C8E /* VMStaticCellsAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 52339729187CABBF00AB9C8E /* VMStaticCellsAdapter.m */; };
 		5283AFCA188097E200D5A23B /* VMStaticSectionsAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5283AFC9188097E200D5A23B /* VMStaticSectionsAdapter.m */; };
 		52A1B1A618813E2700F1FD69 /* NSIndexPath+StaticCellsTranslationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A1B1A518813E2700F1FD69 /* NSIndexPath+StaticCellsTranslationHelper.m */; };
@@ -37,8 +37,8 @@
 		52339701187CAA2B00AB9C8E /* VMMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VMMasterViewController.h; sourceTree = "<group>"; };
 		52339702187CAA2B00AB9C8E /* VMMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VMMasterViewController.m; sourceTree = "<group>"; };
 		52339707187CAA2B00AB9C8E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		52339725187CAB7E00AB9C8E /* UITableViewController+VMStaticCells.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewController+VMStaticCells.h"; sourceTree = "<group>"; };
-		52339726187CAB7E00AB9C8E /* UITableViewController+VMStaticCells.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewController+VMStaticCells.m"; sourceTree = "<group>"; };
+		52339725187CAB7E00AB9C8E /* UITableView+VMStaticCells.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+VMStaticCells.h"; sourceTree = "<group>"; };
+		52339726187CAB7E00AB9C8E /* UITableView+VMStaticCells.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+VMStaticCells.m"; sourceTree = "<group>"; };
 		52339728187CABBF00AB9C8E /* VMStaticCellsAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMStaticCellsAdapter.h; sourceTree = "<group>"; };
 		52339729187CABBF00AB9C8E /* VMStaticCellsAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMStaticCellsAdapter.m; sourceTree = "<group>"; };
 		5233972B187CAE1500AB9C8E /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -104,8 +104,8 @@
 				52339702187CAA2B00AB9C8E /* VMMasterViewController.m */,
 				52339707187CAA2B00AB9C8E /* Images.xcassets */,
 				523396F0187CAA2B00AB9C8E /* Supporting Files */,
-				52339725187CAB7E00AB9C8E /* UITableViewController+VMStaticCells.h */,
-				52339726187CAB7E00AB9C8E /* UITableViewController+VMStaticCells.m */,
+				52339725187CAB7E00AB9C8E /* UITableView+VMStaticCells.h */,
+				52339726187CAB7E00AB9C8E /* UITableView+VMStaticCells.m */,
 				52339728187CABBF00AB9C8E /* VMStaticCellsAdapter.h */,
 				52339729187CABBF00AB9C8E /* VMStaticCellsAdapter.m */,
 				5283AFC8188097E200D5A23B /* VMStaticSectionsAdapter.h */,
@@ -202,7 +202,7 @@
 				52A1B1A618813E2700F1FD69 /* NSIndexPath+StaticCellsTranslationHelper.m in Sources */,
 				5283AFCA188097E200D5A23B /* VMStaticSectionsAdapter.m in Sources */,
 				5233972A187CABBF00AB9C8E /* VMStaticCellsAdapter.m in Sources */,
-				52339727187CAB7E00AB9C8E /* UITableViewController+VMStaticCells.m in Sources */,
+				52339727187CAB7E00AB9C8E /* UITableView+VMStaticCells.m in Sources */,
 				523396FA187CAA2B00AB9C8E /* VMAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,7 +7,7 @@
 //
 
 #import "VMMasterViewController.h"
-#import "UITableViewController+VMStaticCells.h"
+#import "UITableView+VMStaticCells.h"
 #import "VMStaticCellsAdapter.h"
 #import "VMStaticSectionsAdapter.h"
 #import "UITableViewCell+loadNib.h"

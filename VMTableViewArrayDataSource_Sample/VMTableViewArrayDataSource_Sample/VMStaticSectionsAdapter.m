@@ -55,10 +55,13 @@
 {
     NSIndexPath *translated = nil;
     NSInteger finalRow = indexPath.row;
-    //Iterate from i = 0 to indexPath.row
-    //Search for a row @"i" in privateDataStructure[indexPath.section]
-    //If there is, decrement the final row
-    //Otherwise, continue
+    
+    /*
+     Iterate from i = 0 to indexPath.row
+     Search for a row @"i" in privateDataStructure[indexPath.section]
+     If there is, decrement the final row
+     Otherwise, continue
+    */
     VMStaticCellsAdapter *rowsForSection = [self objectAtIndex:indexPath.section];
     for(int i=0; i<indexPath.row; i++)
     {
@@ -86,27 +89,19 @@
 
 - (void) setObject:(id)object atIndex:(NSInteger)index
 {
-    if(! self.privateDataStructure)
-    {
-        self.privateDataStructure = [NSMutableDictionary new];
-    }
-    
     if(! object)
     {
-        [self.privateDataStructure removeObjectForKey:[self keyFromIndex:index]];
-        return;
+        VMStaticCellsAdapter *rows = [self objectAtIndex:0];
+        
+        [rows setObject:nil atIndex:index];
     }
     else
     {
         if([object isKindOfClass:[UITableViewCell class]])
         {
             VMStaticCellsAdapter *rows = [self objectAtIndex:0];
-            if(! rows)
-                rows = [VMStaticCellsAdapter new];
             
             [rows setObject:object atIndex:index];
-            
-            [self.privateDataStructure setObject:rows forKey:[self keyFromIndex:index]];
         } else if([object isKindOfClass:[NSArray class]])
         {
             VMStaticCellsAdapter *rows = [VMStaticCellsAdapter new];
@@ -117,8 +112,6 @@
                 [rows setObject:element atIndex:i];
                 i++;
             }
-            
-            [self.privateDataStructure setObject:rows forKey:[self keyFromIndex:index]];
         } else if([object isKindOfClass:[VMStaticCellsAdapter class]])
         {
             [self.privateDataStructure setObject:object forKey:[self keyFromIndex:index]];
@@ -131,7 +124,6 @@
                   NSStringFromClass([NSArray class]),
                   NSStringFromClass([VMStaticCellsAdapter class])
                   );
-            return;
         }
     }
 }
@@ -230,8 +222,6 @@
 - (void) setObject:(UITableViewCell *)object atIndexPath:(NSIndexPath *)indexPath
 {
     VMStaticCellsAdapter *rows = [self objectAtIndex:indexPath.section];
-    if(! rows)
-        rows = [VMStaticCellsAdapter new];
     
     [rows setObject:object atIndex:indexPath.row];
     

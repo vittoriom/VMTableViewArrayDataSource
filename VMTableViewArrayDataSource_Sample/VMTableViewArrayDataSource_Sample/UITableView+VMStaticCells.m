@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Vittorio Monaco. All rights reserved.
 //
 
-#import "UITableViewController+VMStaticCells.h"
+#import "UITableView+VMStaticCells.h"
 #import <objc/runtime.h>
 #import "VMStaticSectionsAdapter.h"
 #import "VMStaticCellsAdapter.h"
