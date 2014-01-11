@@ -8,9 +8,6 @@
 
 #import "VMMasterViewController.h"
 #import "UITableView+VMStaticCells.h"
-#import "VMStaticCellsAdapter.h"
-#import "VMStaticSectionsAdapter.h"
-#import "UITableViewCell+loadNib.h"
 
 @interface VMMasterViewController () {
     NSArray *_firstSectionObjects;
@@ -39,10 +36,17 @@
     self.tableView.items[0][2] = staticCell;
     self.tableView.items[1][1] = [UITableViewCell loadFromNib:@"StaticCells" cellWithIdentifier:@"buttonCell"];
     self.tableView.items[1][3] = [UITableViewCell loadFromNib:@"StaticCells" cellWithTag:10];
-    self.tableView.chainedDelegate = self;
     self.tableView.dataSource = self.tableView;
+    self.tableView.chainedDelegate = self;
     
     [self.tableView reloadData];
+    
+    double delayInSeconds = 3.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        self.tableView.items[1][3] = nil;
+        [self.tableView reloadData];
+    });
 }
 
 #pragma mark - Table View

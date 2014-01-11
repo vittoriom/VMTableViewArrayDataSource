@@ -8,7 +8,10 @@
 
 @import UIKit;
 
-@class VMStaticSectionsAdapter;
+#import "VMStaticCellsAdapter.h"
+#import "VMStaticSectionsAdapter.h"
+#import "NSIndexPath+StaticCellsTranslationHelper.h"
+#import "UITableViewCell+loadNib.h"
 
 @interface UITableView (VMStaticCells) <UITableViewDataSource>
 
