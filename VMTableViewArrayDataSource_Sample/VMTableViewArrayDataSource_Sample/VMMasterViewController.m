@@ -10,6 +10,7 @@
 #import "UITableViewController+VMStaticCells.h"
 #import "VMStaticCellsAdapter.h"
 #import "VMStaticSectionsAdapter.h"
+#import "UITableViewCell+loadNib.h"
 
 @interface VMMasterViewController () {
     NSArray *_firstSectionObjects;
@@ -33,19 +34,11 @@
     staticCell.textLabel.text = @"Third row";
     staticCell.detailTextLabel.text = @"In first section";
     
-    UITableViewCell *staticCell2 = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"No2"];
-    staticCell2.textLabel.text = @"Second row";
-    staticCell2.detailTextLabel.text = @"In second section";
-    
-    UITableViewCell *staticCell3 = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"No3"];
-    staticCell3.textLabel.text = @"Fourth row";
-    staticCell3.detailTextLabel.text = @"In second section";
-    
     _secondSectionObjects = @[@"Test3", @"Test4"];
     
     self.tableView.items[0][2] = staticCell;
-    self.tableView.items[1][1] = staticCell2;
-    self.tableView.items[1][3] = staticCell3;
+    self.tableView.items[1][1] = [UITableViewCell loadFromNib:@"StaticCells" cellWithIdentifier:@"buttonCell"];
+    self.tableView.items[1][3] = [UITableViewCell loadFromNib:@"StaticCells" cellWithTag:10];
     self.tableView.chainedDelegate = self;
     self.tableView.dataSource = self.tableView;
     
