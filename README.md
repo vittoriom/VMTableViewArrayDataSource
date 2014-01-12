@@ -88,6 +88,37 @@ Anyway, if you set up everything with a clever method of translating indexes or 
 [indexPath originalIndexPath];
 ```
 
+Keep in mind that in 
+
+```
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+```
+
+you should only return the number of sections you manage yourself (not sections with only static cells).
+To help the category work better, please
+
+return <code>0</code> in
+
+```
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+```
+
+for all the sections you don't manage (completely static sections) like in the following snippet:
+
+```
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if(section == 0)
+        return _firstSectionObjects.count;
+    else if(section == 1)
+        return _secondSectionObjects.count;
+    else if(section == 3)
+        return _fourthSectionObjects.count;
+    else
+        return 0; //third section is completely static
+}
+```
+
 **Advanced ways of setting up the static cells**
 
 There are several ways to setup the static cells.

@@ -61,7 +61,17 @@ const char *kChainedDelegateKey = "VMChainedDelegate";
     NSInteger delegateSections = [self.chainedDelegate numberOfSectionsInTableView:tableView];
     NSInteger staticSections = [self.items count];
     
-    return staticSections + delegateSections; //TODO in some way take into account shared sections
+    NSInteger mergedSections = delegateSections + staticSections;
+    
+    //Iterate and find shared sections
+    for(NSInteger i=0; i<delegateSections + staticSections; i++)
+    {
+        if([self.chainedDelegate tableView:tableView numberOfRowsInSection:i] > 0 &&
+           [self.items[i] count] > 0)
+            mergedSections--;
+    }
+    
+    return mergedSections;
 }
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

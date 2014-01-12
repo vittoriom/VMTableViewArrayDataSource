@@ -12,6 +12,7 @@
 @interface VMMasterViewController () {
     NSArray *_firstSectionObjects;
     NSArray *_secondSectionObjects;
+    NSArray *_fourthSectionObjects;
 }
 @end
 
@@ -36,6 +37,16 @@
     self.tableView.items[0][2] = staticCell;
     self.tableView.items[1][1] = [UITableViewCell loadFromNib:@"StaticCells" cellWithIdentifier:@"buttonCell"];
     self.tableView.items[1][3] = [UITableViewCell loadFromNib:@"StaticCells" cellWithTag:10];
+    
+    self.tableView.items[2][0] = [UITableViewCell loadFromNib:@"StaticCells"];
+    
+    UITableViewCell *staticCell2 = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"No"];
+    staticCell2.textLabel.text = @"Second row";
+    staticCell2.detailTextLabel.text = @"In third section";
+    self.tableView.items[2][1] = staticCell2;
+    
+    _fourthSectionObjects = @[@"Test5",@"Test6",@"Test7"];
+    
     self.tableView.dataSource = self.tableView;
     self.tableView.chainedDelegate = self;
     
@@ -58,22 +69,40 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 0;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if(section == 0)
         return _firstSectionObjects.count;
-    else
+    else if(section == 1)
         return _secondSectionObjects.count;
+    else if(section == 3)
+        return _fourthSectionObjects.count;
+    else
+        return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
 
-    NSDate *object = indexPath.section == 0 ? _firstSectionObjects[indexPath.row] : _secondSectionObjects[indexPath.row];
+    NSObject *object = nil;
+    switch (indexPath.section) {
+        case 0:
+            object = _firstSectionObjects[indexPath.row];
+            break;
+        case 1:
+            object = _secondSectionObjects[indexPath.row];
+            break;
+        case 3:
+            object = _fourthSectionObjects[indexPath.row];
+            break;
+        default:
+            break;
+    }
+    
     cell.textLabel.text = [object description];
     return cell;
 }
