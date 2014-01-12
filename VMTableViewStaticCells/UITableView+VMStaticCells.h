@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Vittorio Monaco. All rights reserved.
 //
 
-@import UIKit;
+#import <UIKit/UIKit.h>
 
 #import "VMStaticCellsAdapter.h"
 #import "VMStaticSectionsAdapter.h"
