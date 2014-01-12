@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52324D1A1882CD9B001EF7E9 /* NSIndexPath+StaticCellsTranslationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 52324D111882CD9B001EF7E9 /* NSIndexPath+StaticCellsTranslationHelper.m */; };
+		52324D1B1882CD9B001EF7E9 /* UITableView+VMStaticCells.m in Sources */ = {isa = PBXBuildFile; fileRef = 52324D131882CD9B001EF7E9 /* UITableView+VMStaticCells.m */; };
+		52324D1C1882CD9B001EF7E9 /* UITableViewCell+loadNib.m in Sources */ = {isa = PBXBuildFile; fileRef = 52324D151882CD9B001EF7E9 /* UITableViewCell+loadNib.m */; };
+		52324D1D1882CD9B001EF7E9 /* VMStaticCellsAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 52324D171882CD9B001EF7E9 /* VMStaticCellsAdapter.m */; };
+		52324D1E1882CD9B001EF7E9 /* VMStaticSectionsAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 52324D191882CD9B001EF7E9 /* VMStaticSectionsAdapter.m */; };
 		523396EA187CAA2B00AB9C8E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 523396E9187CAA2B00AB9C8E /* Foundation.framework */; };
 		523396EC187CAA2B00AB9C8E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 523396EB187CAA2B00AB9C8E /* CoreGraphics.framework */; };
 		523396EE187CAA2B00AB9C8E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 523396ED187CAA2B00AB9C8E /* UIKit.framework */; };
@@ -15,15 +20,21 @@
 		523396FA187CAA2B00AB9C8E /* VMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 523396F9187CAA2B00AB9C8E /* VMAppDelegate.m */; };
 		52339703187CAA2B00AB9C8E /* VMMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52339702187CAA2B00AB9C8E /* VMMasterViewController.m */; };
 		52339708187CAA2B00AB9C8E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52339707187CAA2B00AB9C8E /* Images.xcassets */; };
-		52CB14DC1881F8F200973C45 /* NSIndexPath+StaticCellsTranslationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 52CB14D31881F8F200973C45 /* NSIndexPath+StaticCellsTranslationHelper.m */; };
-		52CB14DD1881F8F200973C45 /* UITableView+VMStaticCells.m in Sources */ = {isa = PBXBuildFile; fileRef = 52CB14D51881F8F200973C45 /* UITableView+VMStaticCells.m */; };
-		52CB14DE1881F8F200973C45 /* UITableViewCell+loadNib.m in Sources */ = {isa = PBXBuildFile; fileRef = 52CB14D71881F8F200973C45 /* UITableViewCell+loadNib.m */; };
-		52CB14DF1881F8F200973C45 /* VMStaticCellsAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 52CB14D91881F8F200973C45 /* VMStaticCellsAdapter.m */; };
-		52CB14E01881F8F200973C45 /* VMStaticSectionsAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 52CB14DB1881F8F200973C45 /* VMStaticSectionsAdapter.m */; };
 		52DD4CC618817DB700E39222 /* StaticCells.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52DD4CC518817DB700E39222 /* StaticCells.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		52324CFE1882CCFC001EF7E9 /* VMTableViewStaticCells.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = VMTableViewStaticCells.podspec; path = ../VMTableViewStaticCells.podspec; sourceTree = "<group>"; };
+		52324D101882CD9B001EF7E9 /* NSIndexPath+StaticCellsTranslationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath+StaticCellsTranslationHelper.h"; sourceTree = "<group>"; };
+		52324D111882CD9B001EF7E9 /* NSIndexPath+StaticCellsTranslationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexPath+StaticCellsTranslationHelper.m"; sourceTree = "<group>"; };
+		52324D121882CD9B001EF7E9 /* UITableView+VMStaticCells.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+VMStaticCells.h"; sourceTree = "<group>"; };
+		52324D131882CD9B001EF7E9 /* UITableView+VMStaticCells.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+VMStaticCells.m"; sourceTree = "<group>"; };
+		52324D141882CD9B001EF7E9 /* UITableViewCell+loadNib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+loadNib.h"; sourceTree = "<group>"; };
+		52324D151882CD9B001EF7E9 /* UITableViewCell+loadNib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+loadNib.m"; sourceTree = "<group>"; };
+		52324D161882CD9B001EF7E9 /* VMStaticCellsAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMStaticCellsAdapter.h; sourceTree = "<group>"; };
+		52324D171882CD9B001EF7E9 /* VMStaticCellsAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMStaticCellsAdapter.m; sourceTree = "<group>"; };
+		52324D181882CD9B001EF7E9 /* VMStaticSectionsAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMStaticSectionsAdapter.h; sourceTree = "<group>"; };
+		52324D191882CD9B001EF7E9 /* VMStaticSectionsAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMStaticSectionsAdapter.m; sourceTree = "<group>"; };
 		523396E6187CAA2B00AB9C8E /* VMTableViewArrayDataSource_Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VMTableViewArrayDataSource_Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		523396E9187CAA2B00AB9C8E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		523396EB187CAA2B00AB9C8E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -39,16 +50,6 @@
 		52339707187CAA2B00AB9C8E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5233972B187CAE1500AB9C8E /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		5233972C187CAE1500AB9C8E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		52CB14D21881F8F200973C45 /* NSIndexPath+StaticCellsTranslationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath+StaticCellsTranslationHelper.h"; sourceTree = "<group>"; };
-		52CB14D31881F8F200973C45 /* NSIndexPath+StaticCellsTranslationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexPath+StaticCellsTranslationHelper.m"; sourceTree = "<group>"; };
-		52CB14D41881F8F200973C45 /* UITableView+VMStaticCells.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+VMStaticCells.h"; sourceTree = "<group>"; };
-		52CB14D51881F8F200973C45 /* UITableView+VMStaticCells.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+VMStaticCells.m"; sourceTree = "<group>"; };
-		52CB14D61881F8F200973C45 /* UITableViewCell+loadNib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+loadNib.h"; sourceTree = "<group>"; };
-		52CB14D71881F8F200973C45 /* UITableViewCell+loadNib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+loadNib.m"; sourceTree = "<group>"; };
-		52CB14D81881F8F200973C45 /* VMStaticCellsAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMStaticCellsAdapter.h; sourceTree = "<group>"; };
-		52CB14D91881F8F200973C45 /* VMStaticCellsAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMStaticCellsAdapter.m; sourceTree = "<group>"; };
-		52CB14DA1881F8F200973C45 /* VMStaticSectionsAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMStaticSectionsAdapter.h; sourceTree = "<group>"; };
-		52CB14DB1881F8F200973C45 /* VMStaticSectionsAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMStaticSectionsAdapter.m; sourceTree = "<group>"; };
 		52DD4CC518817DB700E39222 /* StaticCells.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StaticCells.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,10 +67,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		52324D0F1882CD9B001EF7E9 /* VMTableViewStaticCells */ = {
+			isa = PBXGroup;
+			children = (
+				52324D101882CD9B001EF7E9 /* NSIndexPath+StaticCellsTranslationHelper.h */,
+				52324D111882CD9B001EF7E9 /* NSIndexPath+StaticCellsTranslationHelper.m */,
+				52324D121882CD9B001EF7E9 /* UITableView+VMStaticCells.h */,
+				52324D131882CD9B001EF7E9 /* UITableView+VMStaticCells.m */,
+				52324D141882CD9B001EF7E9 /* UITableViewCell+loadNib.h */,
+				52324D151882CD9B001EF7E9 /* UITableViewCell+loadNib.m */,
+				52324D161882CD9B001EF7E9 /* VMStaticCellsAdapter.h */,
+				52324D171882CD9B001EF7E9 /* VMStaticCellsAdapter.m */,
+				52324D181882CD9B001EF7E9 /* VMStaticSectionsAdapter.h */,
+				52324D191882CD9B001EF7E9 /* VMStaticSectionsAdapter.m */,
+			);
+			name = VMTableViewStaticCells;
+			path = ../../VMTableViewStaticCells;
+			sourceTree = "<group>";
+		};
 		523396DD187CAA2B00AB9C8E = {
 			isa = PBXGroup;
 			children = (
 				5233972B187CAE1500AB9C8E /* LICENSE */,
+				52324CFE1882CCFC001EF7E9 /* VMTableViewStaticCells.podspec */,
 				5233972C187CAE1500AB9C8E /* README.md */,
 				523396EF187CAA2B00AB9C8E /* VMTableViewArrayDataSource_Sample */,
 				523396E8187CAA2B00AB9C8E /* Frameworks */,
@@ -98,7 +118,7 @@
 		523396EF187CAA2B00AB9C8E /* VMTableViewArrayDataSource_Sample */ = {
 			isa = PBXGroup;
 			children = (
-				52CB14D11881F8F200973C45 /* VMTableViewStaticCells */,
+				52324D0F1882CD9B001EF7E9 /* VMTableViewStaticCells */,
 				523396F8187CAA2B00AB9C8E /* VMAppDelegate.h */,
 				523396F9187CAA2B00AB9C8E /* VMAppDelegate.m */,
 				52339701187CAA2B00AB9C8E /* VMMasterViewController.h */,
@@ -119,23 +139,6 @@
 				523396F7187CAA2B00AB9C8E /* VMTableViewArrayDataSource_Sample-Prefix.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		52CB14D11881F8F200973C45 /* VMTableViewStaticCells */ = {
-			isa = PBXGroup;
-			children = (
-				52CB14D21881F8F200973C45 /* NSIndexPath+StaticCellsTranslationHelper.h */,
-				52CB14D31881F8F200973C45 /* NSIndexPath+StaticCellsTranslationHelper.m */,
-				52CB14D41881F8F200973C45 /* UITableView+VMStaticCells.h */,
-				52CB14D51881F8F200973C45 /* UITableView+VMStaticCells.m */,
-				52CB14D61881F8F200973C45 /* UITableViewCell+loadNib.h */,
-				52CB14D71881F8F200973C45 /* UITableViewCell+loadNib.m */,
-				52CB14D81881F8F200973C45 /* VMStaticCellsAdapter.h */,
-				52CB14D91881F8F200973C45 /* VMStaticCellsAdapter.m */,
-				52CB14DA1881F8F200973C45 /* VMStaticSectionsAdapter.h */,
-				52CB14DB1881F8F200973C45 /* VMStaticSectionsAdapter.m */,
-			);
-			path = VMTableViewStaticCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,14 +207,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52CB14E01881F8F200973C45 /* VMStaticSectionsAdapter.m in Sources */,
-				52CB14DC1881F8F200973C45 /* NSIndexPath+StaticCellsTranslationHelper.m in Sources */,
-				52CB14DD1881F8F200973C45 /* UITableView+VMStaticCells.m in Sources */,
+				52324D1E1882CD9B001EF7E9 /* VMStaticSectionsAdapter.m in Sources */,
+				52324D1A1882CD9B001EF7E9 /* NSIndexPath+StaticCellsTranslationHelper.m in Sources */,
+				52324D1B1882CD9B001EF7E9 /* UITableView+VMStaticCells.m in Sources */,
 				52339703187CAA2B00AB9C8E /* VMMasterViewController.m in Sources */,
 				523396F6187CAA2B00AB9C8E /* main.m in Sources */,
 				523396FA187CAA2B00AB9C8E /* VMAppDelegate.m in Sources */,
-				52CB14DE1881F8F200973C45 /* UITableViewCell+loadNib.m in Sources */,
-				52CB14DF1881F8F200973C45 /* VMStaticCellsAdapter.m in Sources */,
+				52324D1C1882CD9B001EF7E9 /* UITableViewCell+loadNib.m in Sources */,
+				52324D1D1882CD9B001EF7E9 /* VMStaticCellsAdapter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
